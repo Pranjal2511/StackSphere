@@ -1,0 +1,108 @@
+/* ── Global Reset & Variables ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-base:       #0a0a12;
+  --bg-card:       #111122;
+  --bg-hover:      #16162a;
+  --border:        #1e1e32;
+  --border-hover:  #2e2e4a;
+  --accent:        #6c63ff;
+  --accent-dim:    rgba(108,99,255,0.15);
+  --teal:          #4ecdc4;
+  --teal-dim:      rgba(78,205,196,0.15);
+  --yellow:        #ffd93d;
+  --yellow-dim:    rgba(255,217,61,0.15);
+  --red:           #ff6b6b;
+  --red-dim:       rgba(255,107,107,0.15);
+  --orange:        #ff9a3c;
+  --orange-dim:    rgba(255,154,60,0.15);
+  --text-primary:  #e8e6f0;
+  --text-secondary:#9996b0;
+  --text-muted:    #55536a;
+  --font-display:  'Syne', sans-serif;
+  --font-body:     'DM Sans', sans-serif;
+  --radius-sm:     8px;
+  --radius-md:     12px;
+  --radius-lg:     16px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+button { font-family: var(--font-body); cursor: pointer; }
+input  { font-family: var(--font-body); }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 3px; }
+
+/* ── Utility ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: border-color 0.2s;
+}
+.card:hover { border-color: var(--border-hover); }
+
+.btn {
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 16px;
+  transition: all 0.2s;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover { background: #5a52e0; }
+
+.btn-outline {
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+.btn-outline:hover { background: rgba(108,99,255,0.25); }
+
+.tag-filter {
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.tag-filter.active {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+.tag-filter.inactive {
+  background: #1a1a2e;
+  color: var(--text-secondary);
+}
+.tag-filter.inactive:hover { background: #22223a; color: var(--text-primary); }
